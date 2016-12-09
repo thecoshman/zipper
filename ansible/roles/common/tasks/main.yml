@@ -1,0 +1,22 @@
+---
+
+- name: update cache and pacakges to latest versions
+  apt:
+    update_cache: yes
+    upgrade: safe
+
+- name: update cache and perform distribution upgrade of pacakges
+  apt:
+    update_cache: yes
+    upgrade: dist
+  when: distribution_upgrade
+
+- name: install htop
+  apt:
+    name: htop
+    state: latest
+
+- name: install lnav
+  apt:
+    name: lnav
+    state: latest
