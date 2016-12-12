@@ -1,5 +1,5 @@
 ---
 
-- host: local
-  rolse:
+- hosts: local
+  roles:
     - common
