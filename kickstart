@@ -1,16 +1,13 @@
-echo "    Installing Ansible"
-sudo apt-get install -y software-properties-common
-sudo apt-add-repository -y ppa:ansible/ansible
-sudo apt-get update -y
-sudo apt-get install -y ansible
+echo ""
+echo "=][=  Installing Ansible"
+sudo apt-get install -y ansible aptitude
 
-echo "    Installing Aptitude (required for ansible)"
-sudo apt-get install -y aptitude
-
-echo "    Installing git and cloning the repo"
+echo ""
+echo "=][=  Installing git and clone the repo"
 sudo apt-get install -y git
 git clone https://github.com/thecoshman/zipper.git
 
-echo "    Running bootstrap playbook"
+echo ""
+echo "=][=  Running bootstrap playbook"
 cd zipper/ansible
 sudo ansible-playbook boot_strap.yml -i inventory
