@@ -1,10 +1,11 @@
-echo ""
 echo "=][=  Installing Ansible"
-sudo apt-get install -y ansible aptitude
+echo ""
+sudo apt-get -qq install -y ansible aptitude
 
 echo ""
 echo "=][=  Installing git and clone the repo"
-sudo apt-get install -y git
+echo ""
+sudo apt-get -qq install -y git
 git clone https://github.com/thecoshman/zipper.git
 
 echo ""
