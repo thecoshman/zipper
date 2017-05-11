@@ -1,5 +1,7 @@
 ---
 
 - hosts: local
+  vars:
+    distribution_upgrade: false
   roles:
     - common
