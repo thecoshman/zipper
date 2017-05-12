@@ -18,4 +18,9 @@
     - lnav
     - git
     - vim
+
+- name: Copy configs
+  template:
+    src: ../templates/.vimrc
+    dest: ~/.vimrc
     
