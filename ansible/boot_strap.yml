@@ -5,3 +5,4 @@
     distribution_upgrade: false
   roles:
     - common
+    - docker

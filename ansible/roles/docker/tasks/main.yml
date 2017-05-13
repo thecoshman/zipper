@@ -1,0 +1,22 @@
+---
+
+- name: Install required pacakges for Docker installation
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+
+- name: Add Dockers GGP Key
+  apt_key:
+    url: "https://download.docker.com/linux/ubuntu/gpg"
+    id: 0EBFCD88
+
+- name: Install Docker
+  apt:
+    update_cache: yes
+    name: "docker.io"
+    state: latest
