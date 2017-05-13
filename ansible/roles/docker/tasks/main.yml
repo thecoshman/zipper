@@ -20,3 +20,15 @@
     update_cache: yes
     name: "docker.io"
     state: latest
+
+- name: Docker group for non sudo invocation
+  group:
+    name: docker
+
+# This step requires a reboot to take effect
+- name: User in 'docker' group
+  user:
+    name: thecoshman
+    append: yes
+    groups: docker
+  
