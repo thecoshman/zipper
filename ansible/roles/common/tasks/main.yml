@@ -22,8 +22,8 @@
     - vim
 
 - name: Copy configs
-  template:
-    src: "../templates/{{ item.src }}"
+  copy:
+    src: "../files/{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
     - { src: '.vimrc', dest: '~/.vimrc' }
