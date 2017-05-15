@@ -1,0 +1,18 @@
+---
+
+- set_fact: dl_dir="/tmp/ansible_downloads"
+- set_fact: pkg="vagrant.deb"
+
+- name: Make download folder
+  file:
+    name: "{{ dl_dir }}"
+    state: directory
+
+- name: Get package
+  get_url:
+    url: "https://releases.hashicorp.com/vagrant/1.9.4/vagrant_1.9.4_x86_64.deb"
+    dest: "{{ dl_dir }}/{{ pkg }}"
+
+- name: Install Vagrant package
+  apt:
+    deb: "{{ dl_dir }}/{{ pkg }}"
