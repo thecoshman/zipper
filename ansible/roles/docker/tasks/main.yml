@@ -14,6 +14,7 @@
   apt_key:
     url: "https://download.docker.com/linux/ubuntu/gpg"
     id: 0EBFCD88
+    state: present
 
 - name: Install Docker
   apt:
@@ -24,6 +25,7 @@
 - name: Docker group for non sudo invocation
   group:
     name: docker
+    state: present
 
 # This step requires a reboot to take effect
 - name: User in 'docker' group
