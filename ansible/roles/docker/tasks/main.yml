@@ -16,10 +16,15 @@
     id: 0EBFCD88
     state: present
 
+- name: Add apt repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu xenial stable
+    state: present
+
 - name: Install Docker
   apt:
     update_cache: yes
-    name: "docker.io"
+    name: "docker-ce"
     state: latest
 
 - name: Docker group for non sudo invocation
