@@ -1,15 +1,18 @@
 ---
 
-- name: Make folder to download Dropbox
+- set_fact: dl_dir="/tmp/ansible_downloads"
+- set_fact: pkg="dropbox.deb"
+
+- name: Make download folder
   file:
-    name: /tmp/dropbox
+    name: "{{ dl_dir }}"
     state: directory
 
 - name: Get Dropbox package
   get_url:
     url: "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb"
-    dest: /tmp/dropbox/db.deb
+    dest: "{{ dl_dir }}/{{ pkg }}"
 
 - name: Install Dropbox
   apt:
-    deb: /tmp/dropbox/db.deb
+    deb: "{{ dl_dir }}/{{ pkg }}"
