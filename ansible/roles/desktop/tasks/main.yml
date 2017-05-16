@@ -1,7 +1,0 @@
----
-
-- name: Install Dropbox
-  include: dropbox.yml
-
-- name: Cleanup Amazon lens thing
-  include: amazon.yml

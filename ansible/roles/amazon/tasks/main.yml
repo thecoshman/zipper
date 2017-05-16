@@ -1,6 +1,6 @@
 ---
 
-- name: Remove Amazon .desktop file
+- name: Remove .desktop file
   file:
     name: /usr/share/applications/ubuntu-amazon-default.desktop
     state: absent
@@ -10,7 +10,7 @@
     name: /usr/share/unity-webapps/userscripts/unity-webapps-amazon/Amazon.user.js
     state: absent
  
-- name: Remove Amazon manifest.json
+- name: Remove manifest.json
   file:
     name: /usr/share/unity-webapps/userscripts/unity-webapps-amazon/manifest.json
     state: absent
