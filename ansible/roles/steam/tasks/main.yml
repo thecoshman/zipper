@@ -1,0 +1,11 @@
+---
+
+- name: Add multiverse repository
+  apt_repository:
+    repo: deb http://ie.archive.ubuntu.com/ubuntu/ zesty multiverse
+    state: present
+
+- name: Install
+  apt:
+    name: steam
+    state: present
