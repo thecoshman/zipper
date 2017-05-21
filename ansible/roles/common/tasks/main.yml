@@ -18,7 +18,6 @@
   with_items:
     - htop
     - lnav
-    - git
     - vim
 
 - name: Copy configs
