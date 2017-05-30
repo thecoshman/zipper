@@ -1,0 +1,18 @@
+---
+
+- name: Add repository key
+  apt_key:
+    url: "https://download.sublimetext.com/sublimehq-pub.gpg"
+    id: 8A8F901A
+    state: present
+
+- name: Add repository
+  apt_repository:
+    repo: deb https://download.sublimetext.com/ apt/stable/
+    state: present
+
+- name: Install
+  apt:
+    update_cache: yes
+    name: "sublime-text"
+    state: latest
