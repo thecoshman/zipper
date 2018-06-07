@@ -2,7 +2,7 @@
 
 - name: Add multiverse repository
   apt_repository:
-    repo: deb http://ie.archive.ubuntu.com/ubuntu/ zesty multiverse
+    repo: "deb http://ie.archive.ubuntu.com/ubuntu/ {{ ansible_distribution_release }} multiverse"
     state: present
 
 - name: Install
