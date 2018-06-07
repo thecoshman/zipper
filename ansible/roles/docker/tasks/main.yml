@@ -1,5 +1,14 @@
 ---
 
+- name: Clean old Docker installations
+  apt:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    - docker
+    - docker-engine
+    - docker.io
+
 - name: Install required pacakges for installation
   apt:
     name: "{{ item }}"
@@ -18,7 +27,7 @@
 
 - name: Add repository
   apt_repository:
-    repo: deb https://download.docker.com/linux/ubuntu xenial stable
+    repo: "deb https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
     state: present
 
 - name: Install
