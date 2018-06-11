@@ -1,16 +1,6 @@
 ---
 
-- name: Remove .desktop file
-  file:
-    name: /usr/share/applications/ubuntu-amazon-default.desktop
-    state: absent
-
-- name: Remove Amzon.js
-  file:
-    name: /usr/share/unity-webapps/userscripts/unity-webapps-amazon/Amazon.user.js
-    state: absent
- 
-- name: Remove manifest.json
-  file:
-    name: /usr/share/unity-webapps/userscripts/unity-webapps-amazon/manifest.json
+- name: Uninstall unity-lens-shopping
+  apt:
+    name: unity-lens-shopping
     state: absent
