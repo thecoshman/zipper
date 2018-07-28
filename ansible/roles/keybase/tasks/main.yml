@@ -1,0 +1,12 @@
+---
+
+- name: Add repository key 
+  apt_key:
+    url: "https://keybase.io/docs/server_security/code_signing_key.asc"
+    id: 222B85B0F90BE2D24CFEB93F47484E50656D16C7
+    state: present
+
+- name: Add repository
+  apt_repository:
+    repo: "http://prerelease.keybase.io/deb stable InRelease"
+    state: present
