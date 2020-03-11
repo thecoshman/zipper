@@ -1,24 +1,24 @@
-REPO="$HOME/git/github/thecoshman/zipper"
+REPO="${HOME}/git/github/thecoshman/zipper"
 
 echo "=][=  Installing Some basic pacakges"
 echo ""
 sudo apt-get -qq install ansible aptitude git
 
-if [ -d $REPO ]; then
+if [ -d "${REPO}" ]; then
     echo ""
     echo "=][= Updating the repo"
     echo ""
-    cd $REPO
+    cd "${REPO}"
     git checkout master
     git pull
 else
     echo ""
     echo "=][=  Cloning the repo"
     echo ""
-    git clone https://github.com/thecoshman/zipper.git $REPO
+    git clone https://github.com/thecoshman/zipper.git "${REPO}"
 fi
 
 echo ""
 echo "=][=  Running boot_strap playbook"
-cd $REPO/ansible
+cd "${REPO}/ansible"
 sudo ansible-playbook boot_strap.yml -i inventory
