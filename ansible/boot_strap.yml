@@ -10,7 +10,7 @@
     - docker
     - git
     - keepass
-    - keybase
+#    - keybase
 #    - spotify
     - steam
     - sublime
