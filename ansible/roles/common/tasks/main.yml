@@ -15,7 +15,7 @@
   apt:
     name: "{{item}}"
     state: latest
-  with_items:
+  loop:
     - htop
     - lnav
     - vim
