@@ -2,7 +2,7 @@ REPO="${HOME}/git/github/thecoshman/zipper"
 
 echo "=][=  Installing Some basic pacakges"
 echo ""
-sudo apt-get -qq install ansible aptitude git
+sudo apt-get -qq install ansible aptitude git python3-distutils
 
 if [ -d "${REPO}" ]; then
     echo ""
